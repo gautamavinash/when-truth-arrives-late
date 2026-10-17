@@ -1,0 +1,9 @@
+WARNING: no reference for tunnel at <repo>/mtare_integration/reference_tunnel.json, coverage metrics will fail for this environment.
+
+=== Launching 3 robots in tunnel ===
+[1/1] tunnel team=3 sla iter=0
+  -> {'environment': 'tunnel', 'team_size': 3, 'condition': 'sla', 'iteration': 0, 'attacker_robot': 2, 'lambda_s': 1.5, 'duration_min': 0.6, 'coverage_efficiency': None, 'uncovered_cells': None, 'collision': None, 'redundant_coverage': None, 'malicious_coverage_efficiency': None, 'legitimate_coverage_efficiency': None, 'coverage_error': "Command '['python3', 'coverage_metrics.py', 'analyze', '<repo>/mtare_integration/sweep_data/tunnel_3_sla_0.csv', '--reference', '<repo>/mtare_integration/reference_tunnel.json', '--json', '--attacker-robot-id', '2']' returned non-zero exit status 1.", 'average_delay': 3.2589, 'delay_deviation': 1.6761, 'delay_variance': 3.8001, 'detection_time': 1791821003.7178643, 'detection_delay': 26.807, 'detected': False}
+Wrote live_runs/smoke.xlsx
+Wrote live_runs/smoke.xlsx
+
+Sweep complete: 1 missions recorded.

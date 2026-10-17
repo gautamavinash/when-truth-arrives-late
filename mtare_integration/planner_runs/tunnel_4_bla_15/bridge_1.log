@@ -1,0 +1,34 @@
+[cross_robot_bridge robot1] peers: [0, 2, 3], port 16800
+[cross_robot_bridge robot1] subscribed: /wheeled1/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] subscribed: /wheeled1/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot1] attack=bla lambda=2.5s
+[cross_robot_bridge robot1] publishing /wheeled0/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot1] publishing /wheeled0/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] publishing /wheeled2/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot1] publishing /wheeled2/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] publishing /wheeled3/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] publishing /wheeled3/exploration_info [tare_msgs/ExplorationInfo]
+[attack robot1] in={'exploration_info': 12, 'position': 12} out={'exploration_info': 11, 'position': 11} head_age_s={'exploration_info': 0.7, 'position': 0.7}
+[attack robot1] in={'exploration_info': 25, 'position': 25} out={'exploration_info': 24, 'position': 24} head_age_s={'exploration_info': 0.8, 'position': 0.8}
+[attack robot1] in={'exploration_info': 37, 'position': 37} out={'exploration_info': 36, 'position': 36} head_age_s={'exploration_info': 0.6, 'position': 0.6}
+[attack robot1] in={'exploration_info': 49, 'position': 49} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.4, 'position': 0.4}
+[attack robot1] in={'exploration_info': 61, 'position': 61} out={'exploration_info': 59, 'position': 59} head_age_s={'exploration_info': 1.3, 'position': 1.3}
+[attack robot1] in={'exploration_info': 73, 'position': 73} out={'exploration_info': 72, 'position': 72} head_age_s={'exploration_info': 0.5, 'position': 0.5}
+[attack robot1] in={'exploration_info': 85, 'position': 85} out={'exploration_info': 84, 'position': 84} head_age_s={'exploration_info': 1.0, 'position': 1.0}
+[attack robot1] in={'exploration_info': 97, 'position': 97} out={'exploration_info': 95, 'position': 95} head_age_s={'exploration_info': 2.0, 'position': 2.0}
+[attack robot1] in={'exploration_info': 109, 'position': 109} out={'exploration_info': 108, 'position': 108} head_age_s={'exploration_info': 0.6, 'position': 0.6}
+[attack robot1] in={'exploration_info': 122, 'position': 122} out={'exploration_info': 121, 'position': 121} head_age_s={'exploration_info': 0.2, 'position': 0.2}
+[attack robot1] in={'exploration_info': 133, 'position': 133} out={'exploration_info': 132, 'position': 132} head_age_s={'exploration_info': 0.8, 'position': 0.8}
+[attack robot1] in={'exploration_info': 146, 'position': 146} out={'exploration_info': 145, 'position': 145} head_age_s={'exploration_info': 0.1, 'position': 0.1}
+[attack robot1] in={'exploration_info': 158, 'position': 158} out={'exploration_info': 156, 'position': 156} head_age_s={'exploration_info': 2.1, 'position': 2.1}
+[attack robot1] in={'exploration_info': 170, 'position': 170} out={'exploration_info': 169, 'position': 169} head_age_s={'exploration_info': 1.2, 'position': 1.2}
+[attack robot1] in={'exploration_info': 183, 'position': 183} out={'exploration_info': 182, 'position': 182} head_age_s={'exploration_info': 0.3, 'position': 0.3}
+[attack robot1] in={'exploration_info': 195, 'position': 195} out={'exploration_info': 193, 'position': 193} head_age_s={'exploration_info': 1.5, 'position': 1.5}
+[attack robot1] in={'exploration_info': 207, 'position': 207} out={'exploration_info': 207, 'position': 207} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 219, 'position': 219} out={'exploration_info': 218, 'position': 218} head_age_s={'exploration_info': 0.9, 'position': 0.9}
+[attack robot1] in={'exploration_info': 232, 'position': 232} out={'exploration_info': 229, 'position': 229} head_age_s={'exploration_info': 2.5, 'position': 2.5}
+[attack robot1] in={'exploration_info': 243, 'position': 243} out={'exploration_info': 242, 'position': 242} head_age_s={'exploration_info': 1.8, 'position': 1.8}
+[attack robot1] in={'exploration_info': 256, 'position': 256} out={'exploration_info': 255, 'position': 255} head_age_s={'exploration_info': 0.5, 'position': 0.5}
+[attack robot1] in={'exploration_info': 268, 'position': 268} out={'exploration_info': 267, 'position': 267} head_age_s={'exploration_info': 0.8, 'position': 0.8}
+[attack robot1] in={'exploration_info': 280, 'position': 280} out={'exploration_info': 278, 'position': 278} head_age_s={'exploration_info': 1.7, 'position': 1.7}
+[attack robot1] in={'exploration_info': 292, 'position': 292} out={'exploration_info': 290, 'position': 290} head_age_s={'exploration_info': 1.6, 'position': 1.6}

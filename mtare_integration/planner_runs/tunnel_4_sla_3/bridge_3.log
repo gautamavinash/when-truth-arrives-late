@@ -1,0 +1,9 @@
+[cross_robot_bridge robot3] peers: [0, 1, 2], port 16800
+[cross_robot_bridge robot3] subscribed: /wheeled3/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot3] subscribed: /wheeled3/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot3] publishing /wheeled1/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot3] publishing /wheeled1/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot3] publishing /wheeled2/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot3] publishing /wheeled2/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot3] publishing /wheeled0/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot3] publishing /wheeled0/position [geometry_msgs/PointStamped]

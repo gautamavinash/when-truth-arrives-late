@@ -1,0 +1,27 @@
+WARNING: no reference for garage at <repo>/mtare_integration/reference_garage.json, coverage metrics will fail for this environment.
+
+=== Launching 4 robots in garage ===
+  start positions (random, seed 3): [['7.635', '43.892', '3.114'], ['15.752', '49.145', '-0.187'], ['-6.190', '69.697', '2.114'], ['8.950', '16.621', '-0.149']]
+[1/2] garage team=4 baseline iter=0
+  -> {'environment': 'garage', 'team_size': 4, 'condition': 'baseline', 'iteration': 0, 'attacker_robot': None, 'n_attackers': 0, 'lambda_s': 2.5, 'start_mode': 'random', 'duration_min': 0.7, 'coverage_efficiency': None, 'uncovered_cells': None, 'collision': None, 'redundant_coverage': None, 'malicious_coverage_efficiency': None, 'legitimate_coverage_efficiency': None, 'coverage_error': "Command '['python3', 'coverage_metrics.py', 'analyze', '<repo>/mtare_integration/sweep_data/garage_4_baseline_0.csv', '--reference', '<repo>/mtare_integration/reference_garage.json', '--json']' returned non-zero exit status 1.", 'average_delay': None, 'delay_deviation': None, 'delay_variance': None, 'detection_time': None, 'detection_delay': None, 'detected': None}
+Wrote live_runs/smoke2.xlsx
+[2/2] garage team=4 sla iter=0
+  -> {'environment': 'garage', 'team_size': 4, 'condition': 'sla', 'iteration': 0, 'attacker_robot': [1], 'n_attackers': 1, 'lambda_s': 2.5, 'start_mode': 'random', 'duration_min': 0.7, 'coverage_efficiency': None, 'uncovered_cells': None, 'collision': None, 'redundant_coverage': None, 'malicious_coverage_efficiency': None, 'legitimate_coverage_efficiency': None, 'coverage_error': "Command '['python3', 'coverage_metrics.py', 'analyze', '<repo>/mtare_integration/sweep_data/garage_4_sla_0.csv', '--reference', '<repo>/mtare_integration/reference_garage.json', '--json', '--attacker-robot-id', '1']' returned non-zero exit status 1.", 'average_delay': 11.0871, 'delay_deviation': 5.6853, 'delay_variance': 43.1958, 'detection_time': 1791830252.1361785, 'detection_delay': 39.453, 'detected': False}
+Traceback (most recent call last):
+  File "<repo>/mtare_integration/run_full_sweep.py", line 415, in <module>
+    main()
+  File "<repo>/mtare_integration/run_full_sweep.py", line 403, in main
+    write_excel(all_rows, args.excel_out)
+  File "<repo>/mtare_integration/run_full_sweep.py", line 328, in write_excel
+    ws.append([row.get(k) for k in fields])
+  File "~/.local/lib/python3.12/site-packages/openpyxl/worksheet/worksheet.py", line 673, in append
+    cell = Cell(self, row=row_idx, column=col_idx, value=content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "~/.local/lib/python3.12/site-packages/openpyxl/cell/cell.py", line 119, in __init__
+    self.value = value
+    ^^^^^^^^^^
+  File "~/.local/lib/python3.12/site-packages/openpyxl/cell/cell.py", line 218, in value
+    self._bind_value(value)
+  File "~/.local/lib/python3.12/site-packages/openpyxl/cell/cell.py", line 187, in _bind_value
+    raise ValueError("Cannot convert {0!r} to Excel".format(value))
+ValueError: Cannot convert [1] to Excel

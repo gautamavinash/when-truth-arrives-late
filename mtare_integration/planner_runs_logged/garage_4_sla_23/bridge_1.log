@@ -1,0 +1,39 @@
+[cross_robot_bridge robot1] peers: [0, 2, 3], port 16800
+[cross_robot_bridge robot1] subscribed: /wheeled1/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] subscribed: /wheeled1/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot1] attack=sla lambda=2.5s
+[cross_robot_bridge robot1] publishing /wheeled0/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot1] publishing /wheeled0/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] publishing /wheeled2/exploration_info [tare_msgs/ExplorationInfo]
+[cross_robot_bridge robot1] publishing /wheeled2/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] publishing /wheeled3/position [geometry_msgs/PointStamped]
+[cross_robot_bridge robot1] publishing /wheeled3/exploration_info [tare_msgs/ExplorationInfo]
+[attack robot1] in={'exploration_info': 12, 'position': 12} out={'exploration_info': 5, 'position': 5} head_age_s={'exploration_info': 8.2, 'position': 8.2}
+[attack robot1] in={'exploration_info': 23, 'position': 23} out={'exploration_info': 11, 'position': 11} head_age_s={'exploration_info': 15.2, 'position': 15.2}
+[attack robot1] in={'exploration_info': 34, 'position': 34} out={'exploration_info': 17, 'position': 17} head_age_s={'exploration_info': 22.1, 'position': 22.1}
+[attack robot1] in={'exploration_info': 45, 'position': 45} out={'exploration_info': 23, 'position': 23} head_age_s={'exploration_info': 29.2, 'position': 29.2}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 29, 'position': 29} head_age_s={'exploration_info': 36.2, 'position': 36.2}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 35, 'position': 35} head_age_s={'exploration_info': 43.2, 'position': 43.2}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 41, 'position': 41} head_age_s={'exploration_info': 50.3, 'position': 50.3}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 47, 'position': 47} head_age_s={'exploration_info': 57.0, 'position': 57.0}
+[cross_robot_bridge robot1] recv error: timed out
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[cross_robot_bridge robot1] recv error: timed out
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[cross_robot_bridge robot1] recv error: timed out
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[cross_robot_bridge robot1] recv error: timed out
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[attack robot1] in={'exploration_info': 48, 'position': 48} out={'exploration_info': 48, 'position': 48} head_age_s={'exploration_info': 0.0, 'position': 0.0}
+[cross_robot_bridge robot1] recv error: timed out

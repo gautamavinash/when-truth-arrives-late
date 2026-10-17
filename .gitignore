@@ -3,4 +3,4 @@ __pycache__/
 traces/
 study_results/*_missions.csv
 study_results/mitigation_raw.csv
-*.log
+/*.log
