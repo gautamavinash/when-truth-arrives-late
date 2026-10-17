@@ -1,0 +1,171 @@
+{
+ "fixed": {
+  "params": {
+   "alpha": 2.0,
+   "density_threshold": 0.8,
+   "mean_delay_threshold": 1.0,
+   "min_votes": 1,
+   "seq_gap_threshold": 2,
+   "variance_threshold": 4.0
+  },
+  "tune_acc": 1.0,
+  "frozen": 0.6394557823129252,
+  "retuned": 0.9931972789115646
+ },
+ "maxage": {
+  "params": {
+   "T": 0.5,
+   "persist": 5
+  },
+  "tune_acc": 1.0,
+  "frozen": 0.6462585034013606,
+  "retuned": 1.0
+ },
+ "etd_pop": {
+  "params": {
+   "persist": 4,
+   "smin": 8.0,
+   "tau": 1.5
+  },
+  "tune_acc": 0.972972972972973,
+  "frozen": 0.9863945578231292,
+  "retuned": 0.9863945578231292
+ },
+ "hotd_pop": {
+  "params": {
+   "persist": 1,
+   "theta": 0.7
+  },
+  "tune_acc": 1.0,
+  "frozen": 0.7755102040816326,
+  "retuned": 0.9863945578231292
+ },
+ "iforest_pop": {
+  "params": {
+   "persist": 4,
+   "theta": 0.8
+  },
+  "tune_acc": 1.0,
+  "frozen": 0.54421768707483,
+  "retuned": 1.0
+ },
+ "iforest": {
+  "params": {
+   "persist": 4,
+   "theta": 0.8
+  },
+  "tune_acc": 0.9864864864864865,
+  "frozen": 0.6530612244897959,
+  "retuned": 0.9931972789115646
+ },
+ "bocpd_pop": {
+  "params": {
+   "delta": 2.0,
+   "hazard": 0.01,
+   "persist": 1,
+   "theta": 0.99
+  },
+  "tune_acc": 1.0,
+  "frozen": 1.0,
+  "retuned": 1.0
+ },
+ "bocpd_self": {
+  "params": {
+   "delta": 2.0,
+   "hazard": 0.1,
+   "n0": 10,
+   "persist": 2,
+   "theta": 0.9
+  },
+  "tune_acc": 0.6621621621621622,
+  "frozen": 0.6530612244897959,
+  "retuned": 0.6530612244897959
+ },
+ "etd_style": {
+  "params": {
+   "persist": 2,
+   "smin": 8.0,
+   "tau": 5.0
+  },
+  "tune_acc": 0.972972972972973,
+  "frozen": 0.5510204081632653,
+  "retuned": 1.0
+ },
+ "hotd_style": {
+  "params": {
+   "persist": 1,
+   "theta": 0.5
+  },
+  "tune_acc": 1.0,
+  "frozen": 0.6326530612244898,
+  "retuned": 1.0
+ },
+ "calibrated": {
+  "params": {
+   "delta": 0.5,
+   "k": 6.0,
+   "min_samples": 3,
+   "persist": 5
+  },
+  "tune_acc": 1.0,
+  "frozen": 1.0,
+  "retuned": 1.0
+ },
+ "cusum_self": {
+  "params": {
+   "h": 2.0,
+   "k": 0.25,
+   "n0": 3
+  },
+  "tune_acc": 0.6756756756756757,
+  "frozen": 0.6598639455782312,
+  "retuned": 0.7006802721088435
+ },
+ "cusum_pop": {
+  "params": {
+   "h": 8.0,
+   "k": 1.5
+  },
+  "tune_acc": 1.0,
+  "frozen": 1.0,
+  "retuned": 1.0
+ },
+ "ewma_self": {
+  "params": {
+   "L": 2.5,
+   "lam": 0.3,
+   "n0": 3
+  },
+  "tune_acc": 0.6621621621621622,
+  "frozen": 0.6598639455782312,
+  "retuned": 0.6598639455782312
+ },
+ "ewma_pop": {
+  "params": {
+   "L": 2.5,
+   "lam": 0.3
+  },
+  "tune_acc": 1.0,
+  "frozen": 1.0,
+  "retuned": 1.0
+ },
+ "mad_self": {
+  "params": {
+   "c": 3.0,
+   "n0": 3,
+   "persist": 1
+  },
+  "tune_acc": 0.3783783783783784,
+  "frozen": 0.3401360544217687,
+  "retuned": 0.41496598639455784
+ },
+ "mad_pop": {
+  "params": {
+   "c": 3.0,
+   "persist": 4
+  },
+  "tune_acc": 1.0,
+  "frozen": 1.0,
+  "retuned": 1.0
+ }
+}

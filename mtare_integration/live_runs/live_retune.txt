@@ -1,0 +1,59 @@
+live tuning missions 74, test missions 147
+retuned on live tuning set
+
+detector                                       acc% [95% CI]       hits / effective attackers, false flags   (test missions)
+Deployed monitor (as deployed)                 32.0 [ 25.0, 39.9]  SLA  68/73  BLA   1/80  attack-free FP 27/50
+Fixed thresholds (original)                    21.8 [ 15.9, 29.1]  SLA  73/73  BLA  80/80  attack-free FP 43/50
+Fixed thresholds (retuned) [sim-tuned]         63.9 [ 55.9, 71.3]  SLA  69/73  BLA   1/80  attack-free FP  0/50
+Fixed thresholds (retuned) [live-retuned]      99.3 [ 96.2, 99.9]  SLA  72/73  BLA  80/80  attack-free FP  0/50   {'alpha': 2.0, 'density_threshold': 0.8, 'mean_delay_threshold': 1.0, 'min_votes': 1, 'seq_gap_threshold': 2, 'variance_threshold': 4.0}
+Message-age (freshness) check [sim-tuned]      64.6 [ 56.6, 71.9]  SLA  71/73  BLA   0/80  attack-free FP  0/50
+Message-age (freshness) check [live-retuned]  100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'T': 0.5, 'persist': 5}
+ETD-style, population-normalised features [sim-tuned]   98.6 [ 95.2, 99.6]  SLA  72/73  BLA  80/80  attack-free FP  1/50
+ETD-style, population-normalised features [live-retuned]   98.6 [ 95.2, 99.6]  SLA  72/73  BLA  80/80  attack-free FP  1/50   {'persist': 4, 'smin': 8.0, 'tau': 1.5}
+HOTD-style, population-normalised features [sim-tuned]   77.6 [ 70.2, 83.5]  SLA  69/73  BLA  41/80  attack-free FP  0/50
+HOTD-style, population-normalised features [live-retuned]   98.6 [ 95.2, 99.6]  SLA  71/73  BLA  80/80  attack-free FP  0/50   {'persist': 1, 'theta': 0.7}
+Isolation Forest, population-normalised features [sim-tuned]   54.4 [ 46.4, 62.3]  SLA  44/73  BLA   0/80  attack-free FP  0/50
+Isolation Forest, population-normalised features [live-retuned]  100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'persist': 4, 'theta': 0.8}
+Isolation Forest (attack-free training) [sim-tuned]   65.3 [ 57.3, 72.5]  SLA  72/73  BLA   1/80  attack-free FP  0/50
+Isolation Forest (attack-free training) [live-retuned]   99.3 [ 96.2, 99.9]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'persist': 4, 'theta': 0.8}
+Bayesian change-point, population ref. [sim-tuned]  100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50
+Bayesian change-point, population ref. [live-retuned]  100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'delta': 2.0, 'hazard': 0.01, 'persist': 1, 'theta': 0.99}
+Bayesian change-point, own-stream ref. [sim-tuned]   65.3 [ 57.3, 72.5]  SLA  72/73  BLA   0/80  attack-free FP  0/50
+Bayesian change-point, own-stream ref. [live-retuned]   65.3 [ 57.3, 72.5]  SLA  72/73  BLA   0/80  attack-free FP  0/50   {'delta': 2.0, 'hazard': 0.1, 'n0': 10, 'persist': 2, 'theta': 0.9}
+ETD-style (one-class + K-Means) [sim-tuned]    55.1 [ 47.0, 62.9]  SLA  67/73  BLA   4/80  attack-free FP  7/50
+ETD-style (one-class + K-Means) [live-retuned]  100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'persist': 2, 'smin': 8.0, 'tau': 5.0}
+HOTD-style (supervised) [sim-tuned]            63.3 [ 55.2, 70.6]  SLA  67/73  BLA   0/80  attack-free FP  0/50
+HOTD-style (supervised) [live-retuned]        100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'persist': 1, 'theta': 0.5}
+Calibrated (persistence rule) [sim-tuned]     100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50
+Calibrated (persistence rule) [live-retuned]  100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'delta': 0.5, 'k': 6.0, 'min_samples': 3, 'persist': 5}
+CUSUM, own-stream ref. [sim-tuned]             66.0 [ 58.0, 73.2]  SLA  73/73  BLA   0/80  attack-free FP  0/50
+CUSUM, own-stream ref. [live-retuned]          70.1 [ 62.2, 76.9]  SLA  73/73  BLA  17/80  attack-free FP  0/50   {'h': 2.0, 'k': 0.25, 'n0': 3}
+CUSUM, population ref. [sim-tuned]            100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50
+CUSUM, population ref. [live-retuned]         100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'h': 8.0, 'k': 1.5}
+EWMA, own-stream ref. [sim-tuned]              66.0 [ 58.0, 73.2]  SLA  73/73  BLA   0/80  attack-free FP  0/50
+EWMA, own-stream ref. [live-retuned]           66.0 [ 58.0, 73.2]  SLA  73/73  BLA   0/80  attack-free FP  0/50   {'L': 2.5, 'lam': 0.3, 'n0': 3}
+EWMA, population ref. [sim-tuned]             100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50
+EWMA, population ref. [live-retuned]          100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'L': 2.5, 'lam': 0.3}
+MAD test, own-stream ref. [sim-tuned]          34.0 [ 26.8, 42.0]  SLA   2/73  BLA   0/80  attack-free FP  0/50
+MAD test, own-stream ref. [live-retuned]       41.5 [ 33.8, 49.6]  SLA  21/73  BLA   0/80  attack-free FP  0/50   {'c': 3.0, 'n0': 3, 'persist': 1}
+MAD test, population ref. [sim-tuned]         100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50
+MAD test, population ref. [live-retuned]      100.0 [ 97.5,100.0]  SLA  73/73  BLA  80/80  attack-free FP  0/50   {'c': 3.0, 'persist': 4}
+
+All 225 missions, every attacker (effective or not) must be found; simulation-tuned parameters
+Fixed thresholds (retuned)                     63.1 [ 56.6, 69.1]  SLA 105/120 BLA   1/120 attack-free FP  0/75
+Message-age (freshness) check                  63.6 [ 57.1, 69.6]  SLA 108/120 BLA   0/120 attack-free FP  0/75
+ETD-style, population-normalised features      98.2 [ 95.5, 99.3]  SLA 117/120 BLA 120/120 attack-free FP  1/75
+HOTD-style, population-normalised features     77.3 [ 71.4, 82.3]  SLA 105/120 BLA  65/120 attack-free FP  0/75
+Isolation Forest, population-normalised features   53.3 [ 46.8, 59.7]  SLA  66/120 BLA   0/120 attack-free FP  0/75
+Isolation Forest (attack-free training)        64.0 [ 57.5, 70.0]  SLA 109/120 BLA   2/120 attack-free FP  0/75
+Bayesian change-point, population ref.         98.7 [ 96.2, 99.5]  SLA 117/120 BLA 120/120 attack-free FP  0/75
+Bayesian change-point, own-stream ref.         64.0 [ 57.5, 70.0]  SLA 109/120 BLA   0/120 attack-free FP  0/75
+ETD-style (one-class + K-Means)                55.6 [ 49.0, 61.9]  SLA 101/120 BLA   8/120 attack-free FP  8/75
+HOTD-style (supervised)                        62.2 [ 55.7, 68.3]  SLA 101/120 BLA   0/120 attack-free FP  0/75
+Calibrated (persistence rule)                  99.1 [ 96.8, 99.8]  SLA 117/120 BLA 120/120 attack-free FP  0/75
+CUSUM, own-stream ref.                         64.4 [ 58.0, 70.4]  SLA 113/120 BLA   0/120 attack-free FP  0/75
+CUSUM, population ref.                        100.0 [ 98.3,100.0]  SLA 120/120 BLA 120/120 attack-free FP  0/75
+EWMA, own-stream ref.                          64.0 [ 57.5, 70.0]  SLA 113/120 BLA   0/120 attack-free FP  0/75
+EWMA, population ref.                         100.0 [ 98.3,100.0]  SLA 120/120 BLA 120/120 attack-free FP  0/75
+MAD test, own-stream ref.                      33.3 [ 27.5, 39.7]  SLA   5/120 BLA   0/120 attack-free FP  0/75
+MAD test, population ref.                      97.8 [ 94.9, 99.0]  SLA 113/120 BLA 120/120 attack-free FP  0/75

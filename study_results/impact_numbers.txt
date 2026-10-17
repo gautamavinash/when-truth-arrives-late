@@ -1,0 +1,57 @@
+free cells: {'tunnel': 238, 'indoor': 233, 'garage': 238, 'campus': 195, 'forest': 238}
+coverage efficiency min: 1.0  missions: 5250
+
+Redundant visits, sizes 5-50 (mean per mission; change vs baseline, 95% CI over seeds)
+  tunnel  base   52.1 | SLA   84.6  +62.4% [+51.5,+74.1] | BLA   58.2  +11.7% [+5.4,+18.1]
+  indoor  base   53.8 | SLA   84.8  +57.5% [+48.2,+67.3] | BLA   60.6  +12.5% [+9.5,+15.9]
+  garage  base   55.4 | SLA   88.1  +58.9% [+50.1,+68.7] | BLA   61.6  +11.2% [+6.7,+17.1]
+  campus  base   39.7 | SLA   65.3  +64.7% [+52.7,+77.1] | BLA   45.7  +15.3% [+9.4,+20.7]
+  forest  base   47.1 | SLA   78.0  +65.6% [+56.1,+75.8] | BLA   53.4  +13.4% [+8.3,+19.3]
+  all     base   49.6 | SLA   80.1  +61.5% [+56.1,+66.9] | BLA   55.9  +12.7% [+10.0,+15.8]
+
+Collisions per mission and completion step, sizes 5-50 (change vs baseline, 95% CI)
+  collisions tunnel  base   163.1 | SLA  +21.5% [+14.5,+29.4] | BLA   +1.4% [-4.6,+7.5]
+  collisions indoor  base   169.7 | SLA  +14.2% [+8.4,+20.5] | BLA   +1.7% [-1.2,+4.8]
+  collisions garage  base   170.8 | SLA  +18.8% [+12.3,+25.8] | BLA   +0.8% [-3.7,+6.4]
+  collisions campus  base   123.5 | SLA  +17.1% [+8.6,+26.7] | BLA   +0.8% [-5.1,+6.5]
+  collisions forest  base   148.8 | SLA  +19.3% [+12.3,+26.8] | BLA   +0.8% [-4.1,+6.1]
+  collisions all     base   155.2 | SLA  +18.2% [+14.8,+21.6] | BLA   +1.1% [-1.4,+3.9]
+  completion tunnel  base    71.9 | SLA   +8.3% [+6.0,+10.8] | BLA   +1.3% [-1.3,+3.8]
+  completion indoor  base    71.6 | SLA   +8.2% [+5.7,+11.0] | BLA   +0.6% [-0.3,+1.5]
+  completion garage  base    74.5 | SLA  +10.0% [+7.5,+12.4] | BLA   +0.6% [-1.0,+2.4]
+  completion campus  base    56.3 | SLA   +7.8% [+4.7,+11.2] | BLA   +1.1% [-0.7,+2.7]
+  completion forest  base    68.4 | SLA   +9.4% [+6.5,+12.5] | BLA   +0.7% [-0.9,+2.5]
+  completion all     base    68.5 | SLA   +8.8% [+7.5,+10.1] | BLA   +0.8% [+0.1,+1.6]
+
+Baseline completion step by map (mean over sizes 5-50): {'tunnel': 71.9, 'indoor': 71.6, 'garage': 74.5, 'campus': 56.3, 'forest': 68.4}
+
+Attacker coverage: cells per attacker, fair share |F|/m, ratio to fair share, ratio to mean legitimate coverage
+  sla m= 5: cells  56.1- 78.8  fair  39.0- 47.6  /fair 1.35-1.66  /legit 0.90-1.08  total  56.1- 78.8
+  sla m=10: cells  27.8- 36.1  fair  19.5- 23.8  /fair 1.27-1.52  /legit 0.96-1.12  total  27.8- 36.1
+  sla m=20: cells  14.2- 19.1  fair   9.8- 11.9  /fair 1.41-1.61  /legit 1.07-1.20  total  28.4- 38.2
+  sla m=50: cells   5.0-  7.1  fair   3.9-  4.8  /fair 1.29-1.49  /legit 0.98-1.14  total  25.1- 35.5
+  bla  m= 5: cells  49.4- 64.4  fair  39.0- 47.6  /fair 1.17-1.38  /legit 1.03-1.25  total  49.4- 64.4
+  bla  m=10: cells  23.6- 36.2  fair  19.5- 23.8  /fair 1.05-1.52  /legit 0.85-1.21  total  23.6- 36.2
+  bla  m=20: cells  13.6- 15.7  fair   9.8- 11.9  /fair 1.17-1.43  /legit 0.97-1.24  total  27.2- 31.4
+  bla  m=50: cells   4.8-  6.5  fair   3.9-  4.8  /fair 1.22-1.36  /legit 0.97-1.11  total  23.8- 32.5
+  sla: attacker/legit ratio over sizes 5-50 and maps: mean 1.06, range 0.90-1.20;  attacker/fair share: mean 1.42, range 1.23-1.66
+  bla: attacker/legit ratio over sizes 5-50 and maps: mean 1.05, range 0.85-1.25;  attacker/fair share: mean 1.28, range 1.05-1.52
+  total attacker footprint sla tunnel: m=5 67.4 -> m=50 33.1 (50.9% drop); attacker share of free cells 28.3% -> 13.9%
+  total attacker footprint sla indoor: m=5 74.7 -> m=50 32.4 (56.6% drop); attacker share of free cells 32.1% -> 13.9%
+  total attacker footprint sla garage: m=5 78.8 -> m=50 34.4 (56.3% drop); attacker share of free cells 33.1% -> 14.5%
+  total attacker footprint sla campus: m=5 56.1 -> m=50 25.1 (55.3% drop); attacker share of free cells 28.8% -> 12.9%
+  total attacker footprint sla forest: m=5 64.2 -> m=50 35.5 (44.7% drop); attacker share of free cells 27.0% -> 14.9%
+  total attacker footprint bla tunnel: m=5 55.7 -> m=50 31.0 (44.4% drop); attacker share of free cells 23.4% -> 13.0%
+  total attacker footprint bla indoor: m=5 64.2 -> m=50 29.3 (54.4% drop); attacker share of free cells 27.6% -> 12.6%
+  total attacker footprint bla garage: m=5 64.4 -> m=50 32.5 (49.6% drop); attacker share of free cells 27.1% -> 13.6%
+  total attacker footprint bla campus: m=5 49.4 -> m=50 23.8 (51.9% drop); attacker share of free cells 25.4% -> 12.2%
+  total attacker footprint bla forest: m=5 56.9 -> m=50 30.9 (45.6% drop); attacker share of free cells 23.9% -> 13.0%
+
+Small teams (means over 5 layouts and 25 seeds)
+  m= 4 att=1 cov/att SLA 88.1 BLA 68.9 | redundant SLA +96% [+63,+144] BLA -7% [-20,+6] | collisions SLA +12% BLA -14%
+  m= 8 att=1 cov/att SLA 39.6 BLA 35.8 | redundant SLA +58% [+38,+86] BLA +7% [-0,+16] | collisions SLA +13% BLA +2%
+  m=12 att=2 cov/att SLA 29.8 BLA 24.0 | redundant SLA +88% [+67,+114] BLA +6% [-0,+13] | collisions SLA +19% BLA -3%
+  m=16 att=2 cov/att SLA 20.9 BLA 18.4 | redundant SLA +63% [+47,+84] BLA +9% [+3,+15] | collisions SLA +15% BLA +1%
+  collisions in every mission > 0: 5167 / 5250
+
+wrote figures and study_results/impact_tables.tex

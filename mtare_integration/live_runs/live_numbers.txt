@@ -1,0 +1,34 @@
+missions 150 attack missions 150
+attackers total 240 effective 230
+missions with an ineffective attacker: 6 [('forest', 16, 'sla'), ('forest', 16, 'sla'), ('forest', 16, 'sla'), ('forest', 20, 'sla'), ('forest', 20, 'sla'), ('forest', 20, 'sla')]
+deployed_monitor   acc 33.9 [28.0,40.4] SLA (104, 110) BLA (1, 120) baseFP (35, 75) atkFP (66, 146) lat 16.6
+fixed_orig         acc 22.2 [17.2,28.1] SLA (110, 110) BLA (120, 120) baseFP (55, 75) atkFP (117, 146) lat 7.0
+fixed              acc 64.3 [57.7,70.3] SLA (105, 110) BLA (1, 120) baseFP (0, 75) atkFP (0, 146) lat 20.3
+maxage             acc 65.2 [58.7,71.1] SLA (108, 110) BLA (0, 120) baseFP (0, 75) atkFP (0, 146) lat 12.4
+cusum_self         acc 66.1 [59.6,72.0] SLA (110, 110) BLA (0, 120) baseFP (0, 75) atkFP (0, 146) lat 44.1
+ewma_self          acc 66.1 [59.6,72.0] SLA (110, 110) BLA (0, 120) baseFP (0, 75) atkFP (0, 146) lat 63.0
+mad_self           acc 34.4 [28.4,40.9] SLA (5, 110) BLA (0, 120) baseFP (0, 75) atkFP (0, 146) lat 89.7
+bocpd_self         acc 65.6 [59.1,71.6] SLA (109, 110) BLA (0, 120) baseFP (0, 75) atkFP (0, 146) lat 56.0
+etd_style          acc 56.6 [50.0,62.9] SLA (101, 110) BLA (8, 120) baseFP (8, 75) atkFP (12, 146) lat 30.8
+hotd_style         acc 63.3 [56.8,69.4] SLA (101, 110) BLA (0, 120) baseFP (0, 75) atkFP (0, 146) lat 24.6
+iforest            acc 65.6 [59.1,71.6] SLA (109, 110) BLA (2, 120) baseFP (0, 75) atkFP (0, 146) lat 17.4
+etd_pop            acc 98.2 [95.4,99.3] SLA (107, 110) BLA (120, 120) baseFP (1, 75) atkFP (0, 146) lat 14.9
+hotd_pop           acc 78.7 [72.9,83.6] SLA (105, 110) BLA (65, 120) baseFP (0, 75) atkFP (0, 146) lat 25.4
+iforest_pop        acc 54.3 [47.7,60.7] SLA (66, 110) BLA (0, 120) baseFP (0, 75) atkFP (0, 146) lat 14.1
+mad_pop            acc 100.0 [98.3,100.0] SLA (110, 110) BLA (120, 120) baseFP (0, 75) atkFP (0, 146) lat 8.4
+cusum_pop          acc 100.0 [98.3,100.0] SLA (110, 110) BLA (120, 120) baseFP (0, 75) atkFP (0, 146) lat 2.7
+ewma_pop           acc 100.0 [98.3,100.0] SLA (110, 110) BLA (120, 120) baseFP (0, 75) atkFP (0, 146) lat 2.6
+bocpd_pop          acc 100.0 [98.3,100.0] SLA (110, 110) BLA (120, 120) baseFP (0, 75) atkFP (0, 146) lat 11.7
+calibrated         acc 100.0 [98.3,100.0] SLA (110, 110) BLA (120, 120) baseFP (0, 75) atkFP (0, 146) lat 8.2
+by env
+  campus {'deployed_monitor': '33', 'fixed_orig': '22', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  forest {'deployed_monitor': '32', 'fixed_orig': '17', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  garage {'deployed_monitor': '40', 'fixed_orig': '31', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  indoor {'deployed_monitor': '29', 'fixed_orig': '18', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  tunnel {'deployed_monitor': '36', 'fixed_orig': '22', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+by n
+  4 {'deployed_monitor': '47', 'fixed_orig': '40', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  8 {'deployed_monitor': '24', 'fixed_orig': '18', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  12 {'deployed_monitor': '40', 'fixed_orig': '20', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  16 {'deployed_monitor': '41', 'fixed_orig': '25', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}
+  20 {'deployed_monitor': '17', 'fixed_orig': '7', 'calibrated': '100', 'cusum_pop': '100', 'ewma_pop': '100', 'mad_pop': '100'}

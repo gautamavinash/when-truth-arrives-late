@@ -1,0 +1,107 @@
+== all missions (extra synthetic jitter U(0,0.0) s) ==
+detector                       missions correct%       [95% CI]  eff.found     SLA      BLA  baseFP   atkFP  lat(s)
+Deployed monitor                    221     33.9  [ 28.0, 40.4]    105/230  104/110    1/120   35/75  66/146    16.6
+Fixed thresholds (original)         221     22.2  [ 17.2, 28.1]    230/230  110/110  120/120   55/75 117/146     7.0
+Fixed thresholds (retuned)          221     64.3  [ 57.7, 70.3]    106/230  105/110    1/120    0/75   0/146    20.3
+CUSUM, own-stream ref.              221     66.1  [ 59.6, 72.0]    110/230  110/110    0/120    0/75   0/146    26.7
+EWMA, own-stream ref.               221     66.1  [ 59.6, 72.0]    110/230  110/110    0/120    0/75   0/146    15.6
+MAD test, own-stream ref.           221     33.9  [ 28.0, 40.4]      1/230    1/110    0/120    0/75   0/146    30.7
+Bayesian change-point, own-stream ref.      221     33.9  [ 28.0, 40.4]      0/230    0/110    0/120    0/75   0/146     nan
+ETD-style (one-class + K-Means)      221     52.0  [ 45.5, 58.5]    116/230  103/110   13/120   15/75  20/146    20.2
+HOTD-style (supervised)             221     64.7  [ 58.2, 70.7]    107/230  107/110    0/120    0/75   0/146    17.4
+Isolation Forest (attack-free training)      221     66.5  [ 60.1, 72.4]    115/230  109/110    6/120    0/75   0/146    18.2
+MAD test, population ref.           221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     8.4
+CUSUM, population ref.              221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     2.7
+EWMA, population ref.               221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     2.6
+Bayesian change-point, population ref.      221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146    11.7
+Calibrated (persistence rule)       221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     8.1
+
+-- env = campus --
+detector                       missions correct%       [95% CI]  eff.found     SLA      BLA  baseFP   atkFP  lat(s)
+Deployed monitor                     45     33.3  [ 21.4, 47.9]      21/48    21/24     0/24    7/15   13/30    13.7
+Fixed thresholds (original)          45     22.2  [ 12.5, 36.3]      48/48    24/24    24/24   11/15   24/30     5.6
+Fixed thresholds (retuned)           45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    14.6
+CUSUM, own-stream ref.               45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    25.2
+EWMA, own-stream ref.                45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    13.3
+MAD test, own-stream ref.            45     33.3  [ 21.4, 47.9]       0/48     0/24     0/24    0/15    0/30     nan
+Bayesian change-point, own-stream ref.       45     33.3  [ 21.4, 47.9]       0/48     0/24     0/24    0/15    0/30     nan
+ETD-style (one-class + K-Means)       45     55.6  [ 41.2, 69.1]      23/48    23/24     0/24    4/15    2/30    10.0
+HOTD-style (supervised)              45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    12.2
+Isolation Forest (attack-free training)       45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    13.6
+MAD test, population ref.            45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     7.5
+CUSUM, population ref.               45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     2.3
+EWMA, population ref.                45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     2.3
+Bayesian change-point, population ref.       45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30    10.3
+Calibrated (persistence rule)        45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     6.8
+
+-- env = forest --
+detector                       missions correct%       [95% CI]  eff.found     SLA      BLA  baseFP   atkFP  lat(s)
+Deployed monitor                     41     31.7  [ 19.6, 47.0]      11/38    11/14     0/24    7/15   14/26    38.2
+Fixed thresholds (original)          41     17.1  [  8.5, 31.3]      38/38    14/14    24/24   11/15   23/26    13.9
+Fixed thresholds (retuned)           41     53.7  [ 38.7, 67.9]      10/38     9/14     1/24    0/15    0/26    42.4
+CUSUM, own-stream ref.               41     63.4  [ 48.1, 76.4]      14/38    14/14     0/24    0/15    0/26    38.1
+EWMA, own-stream ref.                41     63.4  [ 48.1, 76.4]      14/38    14/14     0/24    0/15    0/26    29.2
+MAD test, own-stream ref.            41     36.6  [ 23.6, 51.9]       0/38     0/14     0/24    0/15    0/26     nan
+Bayesian change-point, own-stream ref.       41     36.6  [ 23.6, 51.9]       0/38     0/14     0/24    0/15    0/26     nan
+ETD-style (one-class + K-Means)       41     53.7  [ 38.7, 67.9]       9/38     9/14     0/24    0/15    0/26    59.2
+HOTD-style (supervised)              41     56.1  [ 41.0, 70.1]      11/38    11/14     0/24    0/15    0/26    44.0
+Isolation Forest (attack-free training)       41     65.9  [ 50.5, 78.4]      19/38    13/14     6/24    0/15    0/26    33.8
+MAD test, population ref.            41    100.0  [ 91.4,100.0]      38/38    14/14    24/24    0/15    0/26    12.0
+CUSUM, population ref.               41    100.0  [ 91.4,100.0]      38/38    14/14    24/24    0/15    0/26     3.8
+EWMA, population ref.                41    100.0  [ 91.4,100.0]      38/38    14/14    24/24    0/15    0/26     3.6
+Bayesian change-point, population ref.       41    100.0  [ 91.4,100.0]      38/38    14/14    24/24    0/15    0/26    15.5
+Calibrated (persistence rule)        41    100.0  [ 91.4,100.0]      38/38    14/14    24/24    0/15    0/26    10.7
+
+-- env = garage --
+detector                       missions correct%       [95% CI]  eff.found     SLA      BLA  baseFP   atkFP  lat(s)
+Deployed monitor                     45     40.0  [ 27.0, 54.5]      24/48    24/24     0/24    6/15   11/30    15.4
+Fixed thresholds (original)          45     31.1  [ 19.5, 45.7]      48/48    24/24    24/24    9/15   22/30     5.7
+Fixed thresholds (retuned)           45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    18.4
+CUSUM, own-stream ref.               45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    25.0
+EWMA, own-stream ref.                45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    13.7
+MAD test, own-stream ref.            45     33.3  [ 21.4, 47.9]       0/48     0/24     0/24    0/15    0/30     nan
+Bayesian change-point, own-stream ref.       45     33.3  [ 21.4, 47.9]       0/48     0/24     0/24    0/15    0/30     nan
+ETD-style (one-class + K-Means)       45     60.0  [ 45.5, 73.0]      27/48    24/24     3/24    0/15    5/30    15.8
+HOTD-style (supervised)              45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    14.6
+Isolation Forest (attack-free training)       45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    15.2
+MAD test, population ref.            45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     7.9
+CUSUM, population ref.               45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     3.0
+EWMA, population ref.                45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     2.9
+Bayesian change-point, population ref.       45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30    11.7
+Calibrated (persistence rule)        45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     8.2
+
+-- env = indoor --
+detector                       missions correct%       [95% CI]  eff.found     SLA      BLA  baseFP   atkFP  lat(s)
+Deployed monitor                     45     28.9  [ 17.7, 43.4]      25/48    24/24     1/24    7/15   15/30    11.5
+Fixed thresholds (original)          45     17.8  [  9.3, 31.3]      48/48    24/24    24/24   12/15   25/30     5.4
+Fixed thresholds (retuned)           45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    14.3
+CUSUM, own-stream ref.               45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    25.0
+EWMA, own-stream ref.                45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    13.7
+MAD test, own-stream ref.            45     33.3  [ 21.4, 47.9]       0/48     0/24     0/24    0/15    0/30     nan
+Bayesian change-point, own-stream ref.       45     33.3  [ 21.4, 47.9]       0/48     0/24     0/24    0/15    0/30     nan
+ETD-style (one-class + K-Means)       45     46.7  [ 32.9, 60.9]      24/48    24/24     0/24    5/15    4/30    15.1
+HOTD-style (supervised)              45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    11.4
+Isolation Forest (attack-free training)       45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    13.2
+MAD test, population ref.            45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     7.0
+CUSUM, population ref.               45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     1.8
+EWMA, population ref.                45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     1.8
+Bayesian change-point, population ref.       45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     9.5
+Calibrated (persistence rule)        45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     6.7
+
+-- env = tunnel --
+detector                       missions correct%       [95% CI]  eff.found     SLA      BLA  baseFP   atkFP  lat(s)
+Deployed monitor                     45     35.6  [ 23.2, 50.2]      24/48    24/24     0/24    8/15   13/30    15.7
+Fixed thresholds (original)          45     22.2  [ 12.5, 36.3]      48/48    24/24    24/24   12/15   23/30     6.1
+Fixed thresholds (retuned)           45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    24.5
+CUSUM, own-stream ref.               45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    24.9
+EWMA, own-stream ref.                45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    13.8
+MAD test, own-stream ref.            45     33.3  [ 21.4, 47.9]       1/48     1/24     0/24    0/15    0/30    30.7
+Bayesian change-point, own-stream ref.       45     33.3  [ 21.4, 47.9]       0/48     0/24     0/24    0/15    0/30     nan
+ETD-style (one-class + K-Means)       45     44.4  [ 30.9, 58.8]      33/48    23/24    10/24    6/15    9/30    23.8
+HOTD-style (supervised)              45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    19.1
+Isolation Forest (attack-free training)       45     66.7  [ 52.1, 78.6]      24/48    24/24     0/24    0/15    0/30    18.7
+MAD test, population ref.            45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     8.2
+CUSUM, population ref.               45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     3.0
+EWMA, population ref.                45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     2.9
+Bayesian change-point, population ref.       45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30    12.2
+Calibrated (persistence rule)        45    100.0  [ 92.1,100.0]      48/48    24/24    24/24    0/15    0/30     8.8

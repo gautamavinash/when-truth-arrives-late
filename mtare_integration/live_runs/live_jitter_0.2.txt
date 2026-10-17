@@ -1,0 +1,17 @@
+== all missions (extra synthetic jitter U(0,0.2) s) ==
+detector                       missions correct%       [95% CI]  eff.found     SLA      BLA  baseFP   atkFP  lat(s)
+Deployed monitor                    221     40.7  [ 34.5, 47.3]    226/230  106/110  120/120   50/75  81/146    13.7
+Fixed thresholds (original)         221     13.1  [  9.3, 18.2]    230/230  110/110  120/120   68/75 124/146     6.8
+Fixed thresholds (retuned)          221     66.1  [ 59.6, 72.0]    118/230  105/110   13/120    0/75   0/146    23.8
+CUSUM, own-stream ref.              221     64.3  [ 57.7, 70.3]    110/230  110/110    0/120    4/75   1/146    26.8
+EWMA, own-stream ref.               221     66.1  [ 59.6, 72.0]    110/230  110/110    0/120    0/75   0/146    15.5
+MAD test, own-stream ref.           221     33.9  [ 28.0, 40.4]      1/230    1/110    0/120    0/75   0/146    43.2
+Bayesian change-point, own-stream ref.      221     33.9  [ 28.0, 40.4]      0/230    0/110    0/120    0/75   0/146     nan
+ETD-style (one-class + K-Means)      221     56.6  [ 50.0, 62.9]    135/230  103/110   32/120   15/75  21/146    25.3
+HOTD-style (supervised)             221     64.7  [ 58.2, 70.7]    107/230  107/110    0/120    0/75   0/146    17.1
+Isolation Forest (attack-free training)      221     66.5  [ 60.1, 72.4]    117/230  109/110    8/120    0/75   0/146    17.8
+MAD test, population ref.           221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     8.7
+CUSUM, population ref.              221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     2.8
+EWMA, population ref.               221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     2.7
+Bayesian change-point, population ref.      221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146    11.9
+Calibrated (persistence rule)       221    100.0  [ 98.3,100.0]    230/230  110/110  120/120    0/75   0/146     8.2

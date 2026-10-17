@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper."
+title: "When Truth Arrives Late: Spotting Delayed Teammates in Multi-Robot Exploration (code and data)"
+authors:
+  - family-names: Gautam
+    given-names: Avinash
+    affiliation: "Birla Institute of Technology and Science, Pilani"
+  - family-names: Shekhawat
+    given-names: Virendra Singh
+    affiliation: "Birla Institute of Technology and Science, Pilani"
+  - family-names: Sagwal
+    given-names: Rubal
+    affiliation: "Birla Institute of Technology and Science, Pilani"
+  - family-names: Gupta
+    given-names: Vishal
+    affiliation: "Birla Institute of Technology and Science, Pilani"
+license: MIT
+repository-code: "https://github.com/gautamavinash/when-truth-arrives-late"
+preferred-citation:
+  type: article
+  title: "When Truth Arrives Late: Spotting Delayed Teammates in Multi-Robot Exploration"
+  authors:
+    - family-names: Gautam
+      given-names: Avinash
+    - family-names: Shekhawat
+      given-names: Virendra Singh
+    - family-names: Sagwal
+      given-names: Rubal
+    - family-names: Gupta
+      given-names: Vishal
+  year: 2026
+  status: submitted

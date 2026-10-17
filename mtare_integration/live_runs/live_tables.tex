@@ -1,0 +1,70 @@
+\begin{table*}[t]
+\centering
+\caption{Live detection on the original M-TARE system, replayed offline from the recorded traffic. Mission accuracy (\%, 95\% Wilson interval): attack-free missions correct when nothing is flagged, attack missions when every effective attacker is flagged and no honest robot is. Parameters are those tuned in simulation (never tuned on live data).}
+\label{tab:live}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{lcccccc}
+\hline
+Detector & Accuracy & SLA found & BLA found & Attack-free with & Attack missions with & Mean latency \\
+ & & (effective) & (effective) & false flag & false flag & (s) \\
+\hline
+Deployed monitor & 33.9 (28.0--40.4) & 104/110 & 1/120 & 35/75 & 66/146 & 16.6 \\
+Fixed thresholds (original) & 22.2 (17.2--28.1) & 110/110 & 120/120 & 55/75 & 117/146 & 7.0 \\
+Fixed thresholds (retuned) & 64.3 (57.7--70.3) & 105/110 & 1/120 & 0/75 & 0/146 & 20.3 \\
+Message-age (freshness) check & 65.2 (58.7--71.1) & 108/110 & 0/120 & 0/75 & 0/146 & 12.4 \\
+CUSUM, own-stream ref. & 66.1 (59.6--72.0) & 110/110 & 0/120 & 0/75 & 0/146 & 44.1 \\
+EWMA, own-stream ref. & 66.1 (59.6--72.0) & 110/110 & 0/120 & 0/75 & 0/146 & 63.0 \\
+MAD test, own-stream ref. & 34.4 (28.4--40.9) & 5/110 & 0/120 & 0/75 & 0/146 & 89.7 \\
+Bayesian change-point, own-stream ref. & 65.6 (59.1--71.6) & 109/110 & 0/120 & 0/75 & 0/146 & 56.0 \\
+\hline
+ETD-style (one-class + K-Means) & 56.6 (50.0--62.9) & 101/110 & 8/120 & 8/75 & 12/146 & 30.8 \\
+HOTD-style (supervised) & 63.3 (56.8--69.4) & 101/110 & 0/120 & 0/75 & 0/146 & 24.6 \\
+Isolation Forest (attack-free training) & 65.6 (59.1--71.6) & 109/110 & 2/120 & 0/75 & 0/146 & 17.4 \\
+\hline
+ETD-style, population-normalised features & 98.2 (95.4--99.3) & 107/110 & 120/120 & 1/75 & 0/146 & 14.9 \\
+HOTD-style, population-normalised features & 78.7 (72.9--83.6) & 105/110 & 65/120 & 0/75 & 0/146 & 25.4 \\
+Isolation Forest, population-normalised features & 54.3 (47.7--60.7) & 66/110 & 0/120 & 0/75 & 0/146 & 14.1 \\
+MAD test, population ref. & 100.0 (98.3--100.0) & 110/110 & 120/120 & 0/75 & 0/146 & 8.4 \\
+CUSUM, population ref. & 100.0 (98.3--100.0) & 110/110 & 120/120 & 0/75 & 0/146 & 2.7 \\
+EWMA, population ref. & 100.0 (98.3--100.0) & 110/110 & 120/120 & 0/75 & 0/146 & 2.6 \\
+Bayesian change-point, population ref. & 100.0 (98.3--100.0) & 110/110 & 120/120 & 0/75 & 0/146 & 11.7 \\
+Calibrated (persistence rule) & 100.0 (98.3--100.0) & 110/110 & 120/120 & 0/75 & 0/146 & 8.2 \\
+\hline
+\end{tabular}}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Live mission accuracy (\%) when extra random delay, uniform on $0$ to the stated value in seconds, is added to every receive time of the recorded traffic.}
+\label{tab:livejit}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\columnwidth\columnwidth\else\width\fi}{!}{%
+\begin{tabular}{lcccc}
+\hline
+Detector & 0 & 0.05 & 0.2 & 0.5 \\
+\hline
+Deployed monitor & 33.9 & 41.2 & 40.7 & 39.8 \\
+Fixed thresholds (original) & 22.2 & 13.1 & 13.1 & 13.1 \\
+Fixed thresholds (retuned) & 64.3 & 65.6 & 66.1 & 70.1 \\
+Message-age (freshness) check & 65.2 & 65.2 & 65.6 & 99.1 \\
+CUSUM, own-stream ref. & 66.1 & 66.1 & 66.1 & 63.8 \\
+EWMA, own-stream ref. & 66.1 & 66.1 & 65.6 & 64.3 \\
+MAD test, own-stream ref. & 34.4 & 34.4 & 34.4 & 34.4 \\
+Bayesian change-point, own-stream ref. & 65.6 & 65.6 & 65.6 & 65.2 \\
+\hline
+ETD-style (one-class + K-Means) & 56.6 & 56.1 & 54.8 & 56.6 \\
+HOTD-style (supervised) & 63.3 & 63.3 & 63.3 & 63.3 \\
+Isolation Forest (attack-free training) & 65.6 & 66.1 & 67.9 & 68.3 \\
+\hline
+ETD-style, population-normalised features & 98.2 & 98.2 & 93.2 & 92.8 \\
+HOTD-style, population-normalised features & 78.7 & 98.2 & 98.2 & 92.3 \\
+Isolation Forest, population-normalised features & 54.3 & 59.7 & 59.3 & 58.4 \\
+MAD test, population ref. & 100.0 & 100.0 & 100.0 & 100.0 \\
+CUSUM, population ref. & 100.0 & 100.0 & 100.0 & 100.0 \\
+EWMA, population ref. & 100.0 & 100.0 & 100.0 & 100.0 \\
+Bayesian change-point, population ref. & 100.0 & 100.0 & 100.0 & 100.0 \\
+Calibrated (persistence rule) & 100.0 & 100.0 & 100.0 & 100.0 \\
+\hline
+\end{tabular}}
+\end{table}

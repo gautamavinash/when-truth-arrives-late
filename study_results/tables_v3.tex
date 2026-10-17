@@ -1,0 +1,265 @@
+\begin{table*}[t]
+\centering
+\caption{Configurations selected on the held-out missions (300 per noise level), with their worst-case and mean mission accuracy (\%) across the four held-out uniform-noise levels. Every detector was searched with the same number of random draws (up to 36). Symbols as in Section~\ref{sec:method_cal}; $\infty$ disables an indicator.}
+\label{tab:tuned}
+\footnotesize
+\begin{tabular}{lp{0.55\textwidth}rr}
+\hline
+Detector & Selected parameters & Worst case & Mean \\
+\hline
+Fixed thresholds (retuned) & $\alpha=3$, $\tau_\rho=0.3$, $\tau_\mu=2$, $v_{\min}=2$, $\tau_s=8$, $\tau_v=4$ & 66.7 & 79.2 \\
+Message-age check & $T=3$, $P=1$ & 66.7 & 91.7 \\
+CUSUM, own-stream ref. & $h=12$, $\nu=1.5$, $n_0=10$ & 47.0 & 49.7 \\
+EWMA, own-stream ref. & $L=4$, $\omega=0.5$, $n_0=20$ & 47.7 & 48.3 \\
+MAD test, own-stream ref. & $c=2.5$, $n_0=20$, $P=4$ & 3.3 & 22.6 \\
+Bayesian change-point, own-stream ref. & $\delta_B=2$, $H=0.1$, $n_0=10$, $P=2$, $\theta=0.9$ & 49.3 & 49.9 \\
+ETD-style (one-class + K-Means) & $P=4$, $s_{\min}=2$, $\tau=3$ & 67.3 & 79.9 \\
+HOTD-style (supervised) & $P=1$, $\theta=0.9$ & 66.7 & 78.2 \\
+Isolation Forest & $P=1$, $\theta=0.7$ & 66.7 & 74.3 \\
+ETD-style, pop.-normalized & $P=4$, $s_{\min}=8$, $\tau=3$ & 89.3 & 92.2 \\
+HOTD-style, pop.-normalized & $P=3$, $\theta=0.95$ & 48.0 & 72.2 \\
+Isolation Forest, pop.-normalized & $P=1$, $\theta=0.75$ & 65.3 & 71.7 \\
+MAD test, population ref. & $c=2.5$, $P=4$ & 20.7 & 54.2 \\
+CUSUM, population ref. & $h=12$, $\nu=0.5$ & 91.7 & 97.1 \\
+EWMA, population ref. & $L=5$, $\omega=0.1$ & 96.0 & 98.6 \\
+Bayesian change-point, population ref. & $\delta_B=0.5$, $H=0.01$, $P=1$, $\theta=0.99$ & 88.0 & 95.9 \\
+Calibrated (persistence rule) & $\delta=0$, $\kappa=4$, $n_{\min}=3$, $P=3$ & 96.0 & 98.3 \\
+\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Mission accuracy (\%, 95\% bootstrap interval over seeds) of each detector, in 5{,}250 missions per noise level (5 layouts, 14 team sizes, 3 conditions, 25 seeds). A mission is correct when every attacker is flagged and no honest robot is flagged (attack-free missions: nothing flagged); a detector that flags nothing scores 33.3\%, one that finds only SLA 66.7\%. Noise: none; light (jitter $\le1$ step, 2\% loss); moderate ($\le2$, 5\%); heavy ($\le3$, 10\%); shifted (heavy-tailed jitter and bursty loss, never used for tuning). All parameters were fixed on held-out missions beforehand.}
+\label{tab:acc}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{lccccc}
+\hline
+Detector & None & Light & Moderate & Heavy & Shifted \\
+\hline
+Fixed thresholds (original) & 100.0 (100.0--100.0) & 15.9 (14.0--17.6) & 0.0 (0.0--0.0) & 0.0 (0.0--0.0) & 0.0 (0.0--0.0) \\
+Fixed thresholds (retuned) & 66.7 (66.7--66.7) & 85.6 (84.1--87.0) & 99.6 (99.3--99.8) & 65.9 (62.2--69.2) & 19.7 (17.0--22.4) \\
+Message-age check & 66.7 (66.7--66.7) & 99.4 (99.0--99.8) & 100.0 (99.9--100.0) & 100.0 (100.0--100.0) & 0.0 (0.0--0.0) \\
+\hline
+CUSUM, own-stream ref. & 54.7 (54.3--55.2) & 51.0 (49.9--52.1) & 51.5 (50.7--52.3) & 49.3 (48.4--50.2) & 16.8 (15.0--18.7) \\
+EWMA, own-stream ref. & 48.7 (48.2--49.1) & 47.8 (47.0--48.5) & 46.9 (46.3--47.4) & 45.5 (44.7--46.1) & 2.1 (1.5--2.8) \\
+MAD test, own-stream ref. & 33.3 (33.3--33.3) & 2.2 (1.7--2.7) & 24.5 (23.0--25.8) & 32.4 (31.9--32.8) & 2.8 (2.3--3.3) \\
+Bayesian change-point, own-stream ref. & 50.6 (50.2--51.1) & 49.8 (49.2--50.4) & 49.3 (48.8--49.8) & 48.1 (47.6--48.7) & 49.0 (48.3--49.6) \\
+\hline
+ETD-style (one-class + K-Means) & 97.3 (97.0--97.7) & 83.3 (82.0--84.6) & 79.5 (78.2--80.9) & 70.5 (69.3--71.7) & 25.1 (23.8--26.5) \\
+HOTD-style (supervised) & 66.7 (66.7--66.7) & 73.9 (73.0--74.9) & 92.6 (91.5--93.6) & 88.5 (86.6--90.2) & 0.0 (0.0--0.0) \\
+Isolation Forest & 66.7 (66.7--66.7) & 66.8 (66.6--67.0) & 82.2 (81.3--83.0) & 84.5 (83.0--85.9) & 12.2 (10.8--13.7) \\
+\hline
+ETD-style, pop.-normalized & 97.3 (97.0--97.7) & 94.2 (93.2--95.3) & 95.5 (94.7--96.2) & 93.7 (92.4--94.8) & 6.5 (5.4--7.7) \\
+HOTD-style, pop.-normalized & 99.4 (99.3--99.6) & 86.4 (85.1--87.7) & 68.5 (66.9--70.2) & 39.6 (37.5--41.8) & 3.6 (2.7--4.5) \\
+Isolation Forest, pop.-normalized & 66.7 (66.7--66.7) & 78.2 (77.2--79.2) & 73.3 (72.3--74.4) & 69.4 (67.9--71.0) & 35.6 (33.3--37.9) \\
+\hline
+MAD test, population ref. & 66.7 (66.7--66.7) & 15.4 (13.6--17.1) & 65.2 (64.6--65.8) & 66.5 (66.2--66.7) & 10.1 (9.0--11.2) \\
+CUSUM, population ref. & 100.0 (100.0--100.0) & 97.1 (96.0--98.3) & 97.9 (97.0--98.8) & 94.8 (93.2--96.4) & 35.2 (32.2--38.3) \\
+EWMA, population ref. & 100.0 (100.0--100.0) & 97.2 (96.2--98.3) & 98.6 (97.8--99.3) & 95.9 (94.5--97.1) & 41.4 (38.3--44.4) \\
+Bayesian change-point, population ref. & 100.0 (100.0--100.0) & 98.4 (97.6--99.1) & 96.6 (95.8--97.4) & 88.7 (87.9--89.7) & 80.2 (79.0--81.4) \\
+Calibrated (persistence rule) & 100.0 (100.0--100.0) & 99.5 (99.0--99.9) & 97.9 (96.8--98.8) & 95.7 (94.6--96.8) & 45.8 (43.0--48.4) \\
+\hline
+\end{tabular}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Per-class rates (\%) for the runs of Table~\ref{tab:acc}: SLA missions correct / BLA missions correct / attack-free missions with any false flag. Higher is better for the first two, lower for the third.}
+\label{tab:recfp}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{lccccc}
+\hline
+Detector & None & Light & Moderate & Heavy & Shifted \\
+\hline
+Fixed thresholds (original) & 100 / 100 / 0 & 15 / 17 / 85 & 0 / 0 / 100 & 0 / 0 / 100 & 0 / 0 / 100 \\
+Fixed thresholds (retuned) & 100 / 0 / 0 & 100 / 57 / 0 & 100 / 99 / 0 & 68 / 67 / 37 & 21 / 21 / 83 \\
+Message-age check & 100 / 0 / 0 & 100 / 98 / 0 & 100 / 100 / 0 & 100 / 100 / 0 & 0 / 0 / 100 \\
+\hline
+CUSUM, own-stream ref. & 64 / 0 / 0 & 59 / 0 / 6 & 57 / 0 / 3 & 54 / 0 / 6 & 23 / 0 / 73 \\
+EWMA, own-stream ref. & 46 / 0 / 0 & 44 / 0 / 1 & 42 / 0 / 2 & 39 / 0 / 3 & 1 / 1 / 95 \\
+MAD test, own-stream ref. & 0 / 0 / 0 & 0 / 0 / 93 & 0 / 0 / 27 & 0 / 0 / 3 & 0 / 0 / 92 \\
+Bayesian change-point, own-stream ref. & 52 / 0 / 0 & 51 / 0 / 1 & 48 / 0 / 0 & 44 / 0 / 0 & 49 / 0 / 2 \\
+\hline
+ETD-style (one-class + K-Means) & 92 / 100 / 0 & 91 / 59 / 1 & 90 / 51 / 3 & 89 / 24 / 2 & 52 / 1 / 78 \\
+HOTD-style (supervised) & 100 / 0 / 0 & 100 / 22 / 0 & 100 / 78 / 0 & 90 / 87 / 11 & 0 / 0 / 100 \\
+Isolation Forest & 100 / 0 / 0 & 100 / 0 / 0 & 100 / 47 / 0 & 92 / 69 / 8 & 14 / 8 / 86 \\
+\hline
+ETD-style, pop.-normalized & 92 / 100 / 0 & 88 / 100 / 5 & 90 / 100 / 3 & 89 / 96 / 4 & 19 / 0 / 100 \\
+HOTD-style, pop.-normalized & 98 / 100 / 0 & 98 / 61 / 0 & 70 / 45 / 9 & 24 / 25 / 30 & 1 / 6 / 97 \\
+Isolation Forest, pop.-normalized & 100 / 0 / 0 & 100 / 35 / 0 & 98 / 24 / 2 & 97 / 17 / 5 & 51 / 15 / 60 \\
+\hline
+MAD test, population ref. & 100 / 0 / 0 & 27 / 18 / 99 & 98 / 1 / 4 & 100 / 0 / 0 & 19 / 11 / 99 \\
+CUSUM, population ref. & 100 / 100 / 0 & 97 / 97 / 2 & 97 / 99 / 2 & 96 / 95 / 6 & 39 / 44 / 78 \\
+EWMA, population ref. & 100 / 100 / 0 & 97 / 97 / 2 & 98 / 99 / 1 & 97 / 94 / 3 & 46 / 49 / 71 \\
+Bayesian change-point, population ref. & 100 / 100 / 0 & 99 / 99 / 3 & 98 / 92 / 0 & 99 / 68 / 0 & 98 / 42 / 0 \\
+Calibrated (persistence rule) & 100 / 100 / 0 & 100 / 100 / 1 & 98 / 99 / 3 & 98 / 91 / 2 & 53 / 57 / 73 \\
+\hline
+\end{tabular}}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Mean detection latency (steps after the attack starts, over detected attackers), by noise level, for detectors whose accuracy exceeds 66.7\% at some uniform-noise level.}
+\label{tab:lat}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\columnwidth\columnwidth\else\width\fi}{!}{%
+\begin{tabular}{lcccc}
+\hline
+Detector & None & Light & Moderate & Heavy \\
+\hline
+Fixed thresholds (original) & 7.5 & 8.5 & 9.4 & 10.7 \\
+Fixed thresholds (retuned) & 12.0 & 19.4 & 15.1 & 14.8 \\
+Message-age check & 6.0 & 6.8 & 5.7 & 5.9 \\
+ETD-style (one-class + K-Means) & 18.7 & 28.3 & 31.0 & 38.6 \\
+HOTD-style (supervised) & 15.0 & 22.2 & 17.5 & 15.9 \\
+Isolation Forest & 15.0 & 17.2 & 25.9 & 21.7 \\
+ETD-style, pop.-normalized & 18.7 & 19.5 & 20.7 & 22.9 \\
+HOTD-style, pop.-normalized & 16.0 & 25.0 & 36.5 & 50.0 \\
+Isolation Forest, pop.-normalized & 15.0 & 24.7 & 29.2 & 28.2 \\
+CUSUM, population ref. & 3.5 & 6.6 & 9.8 & 14.0 \\
+EWMA, population ref. & 3.5 & 6.4 & 9.7 & 14.9 \\
+Bayesian change-point, population ref. & 11.4 & 15.0 & 19.5 & 28.0 \\
+Calibrated (persistence rule) & 11.1 & 11.6 & 13.5 & 18.1 \\
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table*}[t]
+\centering
+\caption{Mission accuracy (\%) at moderate noise by layout and by team size, for the population-referenced detectors and the strongest baselines (25 seeds, 3 conditions per cell).}
+\label{tab:bymapsize}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{lccccccccccccccccccc}
+\hline
+Detector & Tunnel & Indoor & Garage & Campus & Forest & $m{=}4$ & 5 & 8 & 10 & 12 & 15 & 16 & 20 & 25 & 30 & 35 & 40 & 45 & 50 \\
+\hline
+Fixed thresholds (retuned) & 100 & 100 & 100 & 99 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 99 & 97 & 98 \\
+Message-age check & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 & 100 \\
+HOTD-style (supervised) & 94 & 93 & 93 & 90 & 93 & 100 & 100 & 100 & 100 & 99 & 99 & 100 & 98 & 93 & 88 & 82 & 83 & 75 & 78 \\
+HOTD-style, pop.-normalized & 70 & 69 & 70 & 66 & 69 & 96 & 90 & 93 & 86 & 81 & 83 & 75 & 78 & 55 & 59 & 46 & 42 & 35 & 38 \\
+CUSUM, population ref. & 98 & 98 & 98 & 98 & 98 & 100 & 97 & 97 & 97 & 97 & 99 & 97 & 93 & 100 & 99 & 99 & 99 & 96 & 100 \\
+EWMA, population ref. & 99 & 99 & 99 & 99 & 99 & 100 & 97 & 100 & 97 & 97 & 100 & 99 & 95 & 100 & 99 & 100 & 100 & 97 & 100 \\
+Bayesian change-point, population ref. & 98 & 97 & 98 & 94 & 97 & 100 & 100 & 99 & 99 & 100 & 100 & 99 & 100 & 100 & 98 & 97 & 88 & 87 & 86 \\
+Calibrated (persistence rule) & 98 & 98 & 98 & 98 & 98 & 96 & 96 & 95 & 96 & 99 & 98 & 99 & 95 & 100 & 100 & 100 & 99 & 99 & 99 \\
+\hline
+\end{tabular}}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Mission accuracy (\%, 95\% bootstrap interval) at moderate noise for other delay windows $\lambda$ (steps) and for attacks that start at step 10, with parameters tuned only for $\lambda=3$ and onset 0 (1{,}125 missions per column).}
+\label{tab:sec}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\columnwidth\columnwidth\else\width\fi}{!}{%
+\begin{tabular}{lccc}
+\hline
+Detector & $\lambda=2$ & $\lambda=5$ & Onset at step 10 \\
+\hline
+Fixed thresholds (original) & 0.0 (0.0--0.0) & 0.0 (0.0--0.0) & 0.0 (0.0--0.0) \\
+Fixed thresholds (retuned) & 85.5 (83.1--87.9) & 98.5 (97.6--99.2) & 88.1 (86.5--89.5) \\
+Message-age check & 98.2 (96.8--99.4) & 100.0 (100.0--100.0) & 99.3 (98.7--99.8) \\
+\hline
+CUSUM, own-stream ref. & 54.5 (52.5--56.3) & 43.1 (41.2--44.9) & 73.9 (69.9--77.8) \\
+EWMA, own-stream ref. & 52.6 (51.0--54.0) & 39.2 (37.4--40.8) & 51.7 (49.9--53.2) \\
+MAD test, own-stream ref. & 25.0 (22.0--28.0) & 25.0 (22.1--27.6) & 32.0 (28.6--35.3) \\
+Bayesian change-point, own-stream ref. & 54.8 (54.2--55.4) & 42.0 (41.0--43.1) & 57.8 (56.7--58.9) \\
+\hline
+ETD-style (one-class + K-Means) & 71.4 (68.8--74.0) & 86.8 (85.2--88.1) & 76.5 (73.2--79.9) \\
+HOTD-style (supervised) & 69.0 (67.5--70.8) & 96.1 (94.9--97.1) & 88.9 (86.9--90.8) \\
+Isolation Forest & 67.0 (66.7--67.7) & 93.0 (90.9--94.9) & 81.5 (79.6--83.3) \\
+\hline
+ETD-style, pop.-normalized & 97.1 (95.3--98.5) & 88.2 (87.0--89.0) & 92.0 (90.2--93.8) \\
+HOTD-style, pop.-normalized & 43.0 (39.9--46.0) & 84.0 (81.5--86.4) & 66.4 (63.6--69.2) \\
+Isolation Forest, pop.-normalized & 67.3 (64.6--70.0) & 83.7 (81.6--86.0) & 72.4 (69.9--74.8) \\
+\hline
+MAD test, population ref. & 66.2 (65.3--66.7) & 68.2 (65.6--70.6) & 61.7 (59.1--63.6) \\
+CUSUM, population ref. & 97.2 (94.9--98.9) & 97.3 (94.7--99.6) & 94.4 (90.2--97.8) \\
+EWMA, population ref. & 94.7 (92.1--97.1) & 98.2 (96.0--100.0) & 94.0 (89.5--97.4) \\
+Bayesian change-point, population ref. & 84.2 (82.0--86.1) & 94.2 (92.9--95.5) & 82.4 (80.4--84.3) \\
+Calibrated (persistence rule) & 92.8 (90.4--95.1) & 93.4 (90.3--95.7) & 89.9 (85.8--93.3) \\
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Attack starting at step 20 (teams of 4, 8, 12; 1{,}125 missions per noise level), with every detector retuned on held-out late-onset missions so that an own-stream reference can learn from attack-free messages. Entries: mission accuracy (\%) and SLA / BLA / attack-free false-flag rates (\%); the last column is the selected own-stream warm-up $n_0$.}
+\label{tab:late}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\columnwidth\columnwidth\else\width\fi}{!}{%
+\begin{tabular}{lccc}
+\hline
+Detector & None & Moderate & $n_0$ \\
+\hline
+Fixed thresholds (original) & 100.0 (100/100/0) & 0.0 (0/0/100) & -- \\
+Fixed thresholds (retuned) & 100.0 (100/100/0) & 70.2 (75/64/28) & -- \\
+Message-age check & 100.0 (100/100/0) & 100.0 (100/100/0) & -- \\
+\hline
+CUSUM, own-stream ref. & 100.0 (100/100/0) & 94.7 (97/91/4) & 20 \\
+EWMA, own-stream ref. & 100.0 (100/100/0) & 96.7 (100/93/3) & 20 \\
+MAD test, own-stream ref. & 66.7 (100/0/0) & 56.9 (84/0/13) & 20 \\
+Bayesian change-point, own-stream ref. & 100.0 (100/100/0) & 95.8 (100/89/1) & 20 \\
+\hline
+ETD-style (one-class + K-Means) & 100.0 (100/100/0) & 93.8 (96/88/3) & -- \\
+HOTD-style (supervised) & 100.0 (100/100/0) & 100.0 (100/100/0) & -- \\
+Isolation Forest & 66.7 (100/0/0) & 92.8 (94/89/5) & -- \\
+\hline
+ETD-style, pop.-normalized & 100.0 (100/100/0) & 99.6 (100/100/1) & -- \\
+HOTD-style, pop.-normalized & 100.0 (100/100/0) & 91.1 (96/82/4) & -- \\
+Isolation Forest, pop.-normalized & 66.7 (100/0/0) & 84.2 (92/70/10) & -- \\
+\hline
+MAD test, population ref. & 66.7 (100/0/0) & 64.3 (99/0/6) & -- \\
+CUSUM, population ref. & 100.0 (100/100/0) & 98.8 (98/99/0) & -- \\
+EWMA, population ref. & 100.0 (100/100/0) & 100.0 (100/100/0) & -- \\
+Bayesian change-point, population ref. & 100.0 (100/100/0) & 96.8 (96/97/3) & -- \\
+Calibrated (persistence rule) & 100.0 (100/100/0) & 100.0 (100/100/0) & -- \\
+\hline
+\end{tabular}}
+\end{table}
+
+\begin{table*}[t]
+\centering
+\caption{Robustness to timing effects absent from the simulated channel (moderate noise, 5{,}250 missions per row, frozen detectors). Clock: every sender's clock is offset by $o_j\sim U(-c,c)$ steps or drifts by up to $\pm1\%$ per step. Latency: sender-specific extra delay $b_j\sim U(0,B)$ and extra jitter on $\{0,\dots,J_j\}$, $J_j\sim U\{0,\dots,J\}$. Entries: mission accuracy (\%) / attack-free missions with a false flag (\%).}
+\label{tab:robust}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\textwidth\textwidth\else\width\fi}{!}{%
+\begin{tabular}{lccccccc}
+\hline
+Perturbation & Fixed thresholds (retuned) & Message-age check & HOTD-style (supervised) & CUSUM (pop.) & EWMA (pop.) & Bayesian change-point (pop.) & Calibrated (persistence rule) \\
+\hline
+No perturbation & 99.6 / 0 & 100.0 / 0 & 92.6 / 0 & 97.9 / 2 & 98.6 / 1 & 96.6 / 0 & 97.9 / 3 \\
+Clock offset $\pm0.5$ & 97.4 / 0 & 100.0 / 0 & 92.5 / 0 & 47.4 / 73 & 78.5 / 39 & 83.7 / 14 & 67.9 / 51 \\
+Clock offset $\pm1$ & 50.8 / 45 & 100.0 / 0 & 92.4 / 0 & 12.6 / 97 & 19.4 / 91 & 26.2 / 80 & 17.3 / 93 \\
+Clock offset $\pm2$ & 7.7 / 94 & 9.2 / 93 & 90.9 / 0 & 6.9 / 99 & 7.8 / 98 & 9.0 / 97 & 7.9 / 99 \\
+Clock drift $\pm1\%$ & 95.8 / 3 & 83.1 / 17 & 92.6 / 0 & 63.9 / 49 & 74.8 / 37 & 83.1 / 21 & 72.1 / 40 \\
+Latency $b_j\le1$ & 32.3 / 71 & 100.0 / 0 & 94.0 / 0 & 41.3 / 75 & 72.2 / 44 & 81.4 / 17 & 67.5 / 54 \\
+Jitter $J_j\le2$ & 8.1 / 92 & 5.2 / 95 & 26.9 / 74 & 19.9 / 91 & 33.4 / 79 & 66.6 / 28 & 29.2 / 82 \\
+$b_j\le1$, $J_j\le2$ & 1.2 / 99 & 0.9 / 99 & 18.1 / 84 & 13.6 / 95 & 21.0 / 89 & 44.1 / 59 & 18.0 / 92 \\
+$b_j\le2$, $J_j\le3$ & 0.1 / 100 & 0.0 / 100 & 2.9 / 98 & 9.4 / 98 & 11.4 / 95 & 18.3 / 86 & 10.8 / 97 \\
+\hline
+\end{tabular}}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Sensitivity of the population-referenced detectors (frozen parameters) to the population window $W$, the scale floor $\epsilon$, and a leave-one-out median. Mission accuracy (\%) under no / moderate / heavy noise.}
+\label{tab:sens}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\columnwidth\columnwidth\else\width\fi}{!}{%
+\begin{tabular}{lcccc}
+\hline
+Setting & CUSUM & EWMA & Bayesian & Calibrated \\
+\hline
+Default ($W=10$, $\epsilon=0.05$) & 100.0/97.9/94.8 & 100.0/98.6/95.9 & 100.0/96.6/88.7 & 100.0/97.9/95.7 \\
+$W=5$ & 100.0/96.2/93.1 & 100.0/97.6/95.9 & 100.0/96.7/90.4 & 100.0/95.5/88.3 \\
+$W=20$ & 100.0/98.0/95.1 & 100.0/98.6/95.8 & 100.0/96.6/88.4 & 100.0/98.4/97.6 \\
+$\epsilon=0.01$ & 100.0/97.9/94.8 & 100.0/98.6/95.9 & 100.0/96.6/88.7 & 100.0/97.9/95.7 \\
+$\epsilon=0.2$ & 100.0/98.0/94.8 & 100.0/98.7/95.9 & 100.0/96.6/88.7 & 100.0/98.1/95.7 \\
+Leave-one-out median & 95.2/92.4/90.7 & 95.2/93.1/91.6 & 95.2/91.5/84.4 & 95.2/93.6/91.1 \\
+\hline
+\end{tabular}}
+\end{table}

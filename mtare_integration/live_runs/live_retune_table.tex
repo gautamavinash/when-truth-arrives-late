@@ -1,0 +1,34 @@
+\begin{table}[t]
+\centering
+\caption{Live position-report missions: mission accuracy (\%) on the 147 test missions (iterations 1--2) with the parameters tuned in simulation (delays in seconds read as steps) and with every detector retuned on the 74 live tuning missions (iteration 0) under the same search protocol; learned models are refitted on the live tuning missions.}
+\label{tab:liveretune}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\columnwidth\columnwidth\else\width\fi}{!}{%
+\begin{tabular}{lcc}
+\hline
+Detector & Simulation-tuned & Live-retuned \\
+\hline
+Fixed thresholds (retuned) & 63.9 & 99.3 \\
+Message-age check & 64.6 & 100.0 \\
+\hline
+CUSUM, own-stream ref. & 66.0 & 70.1 \\
+EWMA, own-stream ref. & 66.0 & 66.0 \\
+MAD test, own-stream ref. & 34.0 & 41.5 \\
+Bayesian change-point, own-stream ref. & 65.3 & 65.3 \\
+\hline
+ETD-style (one-class + K-Means) & 55.1 & 100.0 \\
+HOTD-style (supervised) & 63.3 & 100.0 \\
+Isolation Forest & 65.3 & 99.3 \\
+\hline
+ETD-style, pop.-normalized & 98.6 & 98.6 \\
+HOTD-style, pop.-normalized & 77.6 & 98.6 \\
+Isolation Forest, pop.-normalized & 54.4 & 100.0 \\
+\hline
+MAD test, population ref. & 100.0 & 100.0 \\
+CUSUM, population ref. & 100.0 & 100.0 \\
+EWMA, population ref. & 100.0 & 100.0 \\
+Bayesian change-point, population ref. & 100.0 & 100.0 \\
+Calibrated (persistence rule) & 100.0 & 100.0 \\
+\hline
+\end{tabular}}
+\end{table}

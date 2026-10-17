@@ -1,0 +1,57 @@
+missions: 48  (Counter({'baseline': 16, 'bla': 16, 'sla': 16}))
+
+Measured delay (s), by topic / condition / sender role: median, 99th percentile, max
+  exploration_info baseline honest    n=105591 median   0.0011  p99   0.0033  max    0.105
+  exploration_info bla      attacker  n= 18313 median   1.4978  p99   2.5107  max    2.662
+  exploration_info bla      honest    n= 67581 median   0.0011  p99   0.0040  max    0.301
+  exploration_info sla     attacker  n=  9002 median  90.6637  p99 179.4730  max  187.653
+  exploration_info sla     honest    n= 67485 median   0.0011  p99   0.0031  max    0.067
+  position         baseline honest    n=105592 median   0.0006  p99   0.0075  max    0.112
+  position         bla      attacker  n= 18314 median   1.5016  p99   2.5209  max    2.661
+  position         bla      honest    n= 67580 median   0.0006  p99   0.0081  max    0.279
+  position         sla     attacker  n=  8998 median  90.5478  p99 179.4749  max  187.654
+  position         sla     honest    n= 67485 median   0.0006  p99   0.0074  max    0.070
+
+== topic exploration_info: per observer (each honest robot) | team decision (majority of honest observers)
+detector                                 obs acc%       [95% CI]  SLA hit  BLA hit   af FP  | team acc%   SLA    BLA  af FP
+Deployed monitor                             37.0  [ 30.7, 43.8]     57/64     3/64   43/80  |      60.4  14/16   1/16   2/16
+Fixed thresholds (original)                  39.4  [ 33.0, 46.2]     64/64    64/64   59/80  |      81.2  16/16  16/16   2/16
+Message-age (freshness) check                69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+ETD-style, population-normalised featur      96.2  [ 92.6, 98.0]     64/64    64/64    8/80  |      97.9  16/16  16/16   1/16
+HOTD-style, population-normalised featu      88.5  [ 83.4, 92.1]     64/64    40/64    0/80  |      89.6  16/16  11/16   0/16
+Isolation Forest, population-normalised      69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Isolation Forest (attack-free training)      69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Bayesian change-point, population ref.      100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+Bayesian change-point, own-stream ref.       69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+ETD-style (one-class + K-Means)              69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+HOTD-style (supervised)                      69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Fixed thresholds (retuned)                   69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Calibrated (persistence rule)               100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+CUSUM, own-stream ref.                       69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+CUSUM, population ref.                      100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+EWMA, own-stream ref.                        69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+EWMA, population ref.                       100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+MAD test, own-stream ref.                    38.5  [ 32.1, 45.2]      0/64     0/64    0/80  |      33.3   0/16   0/16   0/16
+MAD test, population ref.                   100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+
+== topic position: per observer (each honest robot) | team decision (majority of honest observers)
+detector                                 obs acc%       [95% CI]  SLA hit  BLA hit   af FP  | team acc%   SLA    BLA  af FP
+Deployed monitor                              8.7  [  5.5, 13.3]     57/64     3/64   71/80  |      14.6  14/16   1/16  13/16
+Fixed thresholds (original)                  13.5  [  9.5, 18.8]     64/64    64/64   71/80  |      20.8  16/16  16/16  13/16
+Message-age (freshness) check                69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+ETD-style, population-normalised featur      97.1  [ 93.9, 98.7]     64/64    64/64    6/80  |      97.9  16/16  16/16   1/16
+HOTD-style, population-normalised featu      91.3  [ 86.7, 94.5]     64/64    46/64    0/80  |      91.7  16/16  12/16   0/16
+Isolation Forest, population-normalised      69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Isolation Forest (attack-free training)      69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Bayesian change-point, population ref.      100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+Bayesian change-point, own-stream ref.       69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+ETD-style (one-class + K-Means)              69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+HOTD-style (supervised)                      69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Fixed thresholds (retuned)                   69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+Calibrated (persistence rule)               100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+CUSUM, own-stream ref.                       69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+CUSUM, population ref.                      100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+EWMA, own-stream ref.                        69.2  [ 62.7, 75.1]     64/64     0/64    0/80  |      66.7  16/16   0/16   0/16
+EWMA, population ref.                       100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16
+MAD test, own-stream ref.                    38.5  [ 32.1, 45.2]      0/64     0/64    0/80  |      33.3   0/16   0/16   0/16
+MAD test, population ref.                   100.0  [ 98.2,100.0]     64/64    64/64    0/80  |     100.0  16/16  16/16   0/16

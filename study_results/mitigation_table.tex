@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Closed-loop responses (grid world; 5 layouts, team sizes 5, 10, 20, 50, 25 seeds). Extra redundant visits and mission time are relative to the attack-free missions with the same seeds and no response (ratio of totals); the last column is the cost of the response itself in attack-free missions. Coverage stayed complete in every run.}
+\label{tab:mitigation}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\ifdim\width>\columnwidth\columnwidth\else\width\fi}{!}{%
+\begin{tabular}{llcccc}
+\hline
+Noise & Response & SLA & BLA & SLA time & Attack-free \\
+\hline
+none & Keep everything & $+59.3\%$ & $+7.3\%$ & $+9.2\%$ & $+0.0\%$ \\
+ & Ignore sender flagged by EWMA & $+83.6\%$ & $+83.6\%$ & $+12.8\%$ & $+0.0\%$ \\
+ & Ignore sender flagged by calibrated rule & $+63.7\%$ & $+52.8\%$ & $+10.7\%$ & $+0.0\%$ \\
+ & Drop messages older than 2 steps & $+83.6\%$ & $+7.3\%$ & $+12.8\%$ & $+0.0\%$ \\
+\hline
+moderate & Keep everything & $+34.3\%$ & $+5.5\%$ & $+7.9\%$ & $+0.0\%$ \\
+ & Ignore sender flagged by EWMA & $+52.3\%$ & $+35.5\%$ & $+11.5\%$ & $+6.3\%$ \\
+ & Ignore sender flagged by calibrated rule & $+41.4\%$ & $+32.3\%$ & $+10.5\%$ & $+1.1\%$ \\
+ & Drop messages older than 2 steps & $+52.0\%$ & $+5.8\%$ & $+12.4\%$ & $+0.0\%$ \\
+\hline
+\end{tabular}}
+\end{table}
